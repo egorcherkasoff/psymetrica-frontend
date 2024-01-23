@@ -1,12 +1,14 @@
 <script>
     import "@fortawesome/fontawesome-free/css/all.min.css";
+    import Logo from "./Logo.svelte";
     import avatar from "$lib/assets/avatar.svg";
+    import { Theme } from "$lib/types";
 </script>
 
 <nav class="header-nav container">
     <ul class="header-nav__list">
         <li class="header-nav__list-item">
-            <a href="/" class="header-nav__logo">Psymetrica</a>
+            <Logo theme={Theme.primary}></Logo>
         </li>
         <li class="header-nav__list-item header-nav__list-item_grouped">
             <div class="header-nav__search">
@@ -46,10 +48,6 @@
         top: 0;
         left: 0;
         right: 0;
-    }
-
-    .header-nav__logo {
-        @extend %logo;
     }
 
     .header-nav__list {
@@ -106,9 +104,6 @@
     @media (max-width: 576px) {
         .header-nav {
             margin-top: 15px;
-        }
-        .header-nav__logo {
-            font-size: 28px;
         }
         .header-nav__avatar {
             margin-left: 15px;
