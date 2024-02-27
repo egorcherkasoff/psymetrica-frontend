@@ -1,51 +1,42 @@
 <script lang="ts">
-    import { Theme } from "$lib/types";
-
-    export let text: String = "Psymetrica";
-    export let theme: Theme;
 </script>
 
-<logo class="logo">
-    <span class="logo__text logo__text_{theme}">{text}</span>
-</logo>
+<a href="/" class="logo-link">
+    <span class="logo">Psymetrica</span>
+</a>
 
 <style lang="scss">
     @import "../styles/index";
 
-    .logo__text {
+    .logo {
         font-family: $primaryFontFamily;
         font-weight: $logoFontWeight;
         font-size: $logoFontSize;
+        color: $primaryColor;
         text-decoration: none;
-        &_primary {
-            color: $primaryColor;
-        }
-        &_secondary {
-            color: #ffffff;
-        }
-        &_dark {
-            color: $textColor;
+        &-link {
+            text-decoration: none;
         }
     }
 
-    @media (max-width: 576px) {
-        .logo__text {
-            font-size: 24px;
-        }
-    }
-    @media (max-width: 768px) {
-        .logo__text {
-            font-size: 24px;
-        }
-    }
-    @media (max-width: 992px) {
-        .logo__text {
+    // TODO: add hover
+
+    // медиа запросы
+    @media screen and (max-width: 992px) {
+        .logo {
             font-size: 36px;
         }
     }
-    @media (max-width: 1200px) {
-        .logo__text {
-            font-size: 48px;
+
+    @media screen and (max-width: 768px) {
+        .logo {
+            font-size: 32px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .logo {
+            font-size: 24px;
         }
     }
 </style>
