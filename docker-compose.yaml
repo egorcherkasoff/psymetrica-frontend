@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    container_name: psymetrica-front
+    expose:
+      - 3000
+
+  webserver:
+    build: 
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: psymetrica-front-webserver
+    ports:
+      - 8080:80
