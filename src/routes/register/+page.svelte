@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-    <title>Psymetrica | Войти</title>
+    <title>Psymetrica | Регистрация</title>
 </svelte:head>
 
 <main class="main">
@@ -20,21 +20,24 @@
                 <form action="" class="auth__form">
                     <InputGroupVertical>
                         <HeadlineText>
-                            <h1>Вход в приложение</h1>
+                            <h1>Регистрация</h1>
                         </HeadlineText>
                         <TextInput
                             placeholder="Введите адрес вашей эл.почты"
                             fieldName="Эл. почта"
                         ></TextInput>
                         <TextInput
-                            placeholder="Введите ваш пароль"
+                            placeholder="Введите пароль"
                             fieldName="Пароль"
-                            isObscured={true}
+                        ></TextInput>
+                        <TextInput
+                            placeholder="Подтвердите пароль"
+                            fieldName="Подтверждение пароля"
                         ></TextInput>
                     </InputGroupVertical>
                     <div class="auth__form-buttons">
-                        <DefaultBtn text="Войти"></DefaultBtn>
-                        <OutlinedBtn text="Нет аккаунта? Зарегистрируйтесь"
+                        <DefaultBtn text="Зарегистрироваться"></DefaultBtn>
+                        <OutlinedBtn text="Уже есть аккаунт? Войдите"
                         ></OutlinedBtn>
                     </div>
                 </form>

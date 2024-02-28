@@ -6,11 +6,6 @@
     import SearchInput from "./inputs/SearchInput.svelte";
 
     let isBurgerActive = false;
-
-    function toggleBurger() {
-        isBurgerActive = !isBurgerActive;
-        console.log(isBurgerActive);
-    }
 </script>
 
 <header class="header">
@@ -27,7 +22,7 @@
                 </li>
                 <li class="">
                     <div class="header__nav-block">
-                        <BurgerBtn on:click={toggleBurger} />
+                        <BurgerBtn />
                         <AvatarSmall
                             src="https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-krasivaya-panda.jpg"
                             link="/login"
@@ -108,6 +103,7 @@
     }
     @media screen and (max-width: 992px) {
         .header {
+            height: 70px;
             &__nav {
                 &-list {
                 }
@@ -120,6 +116,7 @@
     }
     @media screen and (max-width: 768px) {
         .header {
+            height: 60px;
             &__nav {
                 &-list {
                 }
@@ -134,6 +131,8 @@
 
     @media screen and (max-width: 576px) {
         .header {
+            margin-top: 5px;
+            height: 50px;
             &__nav {
                 &-list {
                 }

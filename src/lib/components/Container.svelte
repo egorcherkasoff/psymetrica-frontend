@@ -8,9 +8,8 @@
 <style lang="scss">
     .container {
         height: 100%;
-        margin: 0 auto;
         max-width: 1400px;
-        width: 100%;
+        margin: 0 auto;
     }
 
     @media (max-width: 1400px) {
@@ -20,9 +19,15 @@
     }
 
     @media (max-width: 1200px) {
+        .container {
+            padding: 0 10px 0 10px;
+        }
     }
 
     @media (max-width: 992px) {
+        .container {
+            padding: 0 10px 0 10px;
+        }
     }
 
     @media (max-width: 768px) {

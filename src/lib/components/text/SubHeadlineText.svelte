@@ -1,9 +1,8 @@
 <script lang="ts">
-    export let text: String;
 </script>
 
 <span class="h2-text">
-    {text}
+    <slot />
 </span>
 
 <style lang="scss">

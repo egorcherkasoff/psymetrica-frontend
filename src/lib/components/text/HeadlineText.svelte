@@ -1,9 +1,8 @@
 <script lang="ts">
-    export let text: String;
 </script>
 
 <span class="h1-text">
-    {text}
+    <slot />
 </span>
 
 <style lang="scss">
@@ -14,5 +13,17 @@
         font-weight: $h1FontWeight;
         font-size: $h1FontSize;
         color: $headerColor;
+    }
+
+    @media screen and (max-width: 992px) {
+        .h1-text {
+            font-size: 28px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .h1-text {
+            font-size: 24px;
+        }
     }
 </style>

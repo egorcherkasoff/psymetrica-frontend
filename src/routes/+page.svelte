@@ -3,7 +3,10 @@
     import Header from "$lib/components/Header.svelte";
 </script>
 
-<Header></Header>
+<svelte:head>
+    <title>Psymetrica | Главная</title>
+</svelte:head>
+
 <main class="main">1</main>
 
 <style lang="scss">

@@ -18,9 +18,11 @@
             position: absolute;
             top: 13px;
             left: 14px;
+            color: $iconColor;
         }
         & input {
             margin: 0;
+            box-sizing: border-box;
             height: 100%;
             width: 100%;
             border-radius: 8px;
@@ -29,6 +31,7 @@
             font-size: $subtitleFontSize;
             font-weight: $subtitleFontWeight;
             padding-left: 40px;
+            padding-right: 14px;
 
             &::placeholder {
                 color: $placeholderColor;
