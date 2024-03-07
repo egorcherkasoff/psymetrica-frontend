@@ -16,7 +16,7 @@
 <main class="main">
     <Container>
         <div class="auth">
-            <Card>
+            <Card isFullWidth={true}>
                 <form action="" class="auth__form">
                     <InputGroupVertical>
                         <HeadlineText>

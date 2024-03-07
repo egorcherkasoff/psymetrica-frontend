@@ -16,7 +16,7 @@
 <main class="main">
     <Container>
         <div class="auth">
-            <Card>
+            <Card isFullWidth={true}>
                 <form action="" class="auth__form">
                     <InputGroupVertical>
                         <HeadlineText>
@@ -45,6 +45,7 @@
 
 <style lang="scss">
     @import "../../lib/styles/index.scss";
+
     .main {
         height: 100vh;
     }

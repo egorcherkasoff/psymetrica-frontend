@@ -1,51 +1,51 @@
-<script></script>
+<script lang="ts">
+    import Logo from "./Logo.svelte";
+    import Container from "./Container.svelte";
+    import SubHeadlineText from "./text/SubHeadlineText.svelte";
+    import GoUpBtn from "./buttons/GoUpBtn.svelte";
+    import "@fortawesome/fontawesome-free/css/all.min.css";
+</script>
 
 <footer class="footer">
-    <ul class="footer__list container">
-        <li class="footer__list-item">
-            <a href="/" class="footer__logo">Psymetrica</a>
-        </li>
-        <li class="footer__list-item">
-            <p class="footer__list-title">Меню</p>
-            <ul class="footer__grid">
-                <li class="footer__grid-item">Главная</li>
-                <li class="footer__grid-item">О проекте</li>
-                <li class="footer__grid-item">Психологи</li>
-                <li class="footer__grid-item">Статьи</li>
-                <li class="footer__grid-item">Отзывы</li>
-                <li class="footer__grid-item">Контакты</li>
-            </ul>
-        </li>
-        <li class="footer__list-item">
-            <button class="footer__button">^</button>
-            <ul class="footer__social">
-                <li class="footer__social-link"><a href="/">vk</a></li>
-                <li class="footer__social-link"><a href="/">tg</a></li>
-                <li class="footer__social-link"><a href="/">inst</a></li>
-            </ul>
-        </li>
-    </ul>
+    <Container>
+        <div class="footer__box">
+            <div class="footer__logo">
+                <Logo isInFooter={true}></Logo>
+            </div>
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                        <SubHeadlineText>Навигация</SubHeadlineText>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">123</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">12233</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">3123</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__vertical-box">
+                <GoUpBtn></GoUpBtn>
+                <div class="footer__social-links"></div>
+            </div>
+        </div>
+    </Container>
 </footer>
 
 <style lang="scss">
     @import "../styles/index.scss";
 
     .footer {
-        height: 426px;
-        width: 100%;
         background-color: $primaryColor;
-        padding-top: 67px;
-    }
-    .footer__list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .footer__logo {
-        color: #ffffff;
-    }
-    .footer__list-title {
-        font-weight: $h2FontWeight;
-        font-size: $h2FontSize;
+        padding: 10px 0 10px 0;
+        &__box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 </style>

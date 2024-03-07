@@ -10,8 +10,8 @@
 
     .small-text {
         font-family: $secondaryFontFamily;
-        font-weight: $bodyFontWeight;
-        font-size: $bodyFontSize;
+        font-weight: $smallFontWeight;
+        font-size: $smallFontSize;
         color: $textColor;
     }
 </style>

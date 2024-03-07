@@ -1,8 +1,13 @@
 <script lang="ts">
+    export let link: string = "";
 </script>
 
 <span class="body-text">
-    <slot />
+    {#if link === ""}
+        <slot />
+    {:else}
+        <a href={link}><slot /></a>
+    {/if}
 </span>
 
 <style lang="scss">
@@ -10,8 +15,15 @@
 
     .body-text {
         font-family: $secondaryFontFamily;
-        font-weight: $smallFontWeight;
-        font-size: $smallFontSize;
+        font-weight: $bodyFontWeight;
+        font-size: $bodyFontSize;
         color: $textColor;
+        & a {
+            text-decoration: none;
+            font-family: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
     }
 </style>

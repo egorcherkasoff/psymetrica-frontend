@@ -1,8 +1,9 @@
 <script lang="ts">
+    export let isInFooter: boolean = false;
 </script>
 
 <a href="/" class="logo-link">
-    <span class="logo">Psymetrica</span>
+    <span class="logo {isInFooter ? 'footer' : ''}">Psymetrica</span>
 </a>
 
 <style lang="scss">
@@ -16,6 +17,9 @@
         text-decoration: none;
         &-link {
             text-decoration: none;
+        }
+        &.footer {
+            color: #fff;
         }
     }
 
