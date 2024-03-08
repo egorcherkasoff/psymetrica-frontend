@@ -15,23 +15,22 @@
             <nav class="footer__nav">
                 <ul class="footer__nav-list">
                     <li class="footer__nav-item">
-                        <SubHeadlineText>Навигация</SubHeadlineText>
+                        <SubHeadlineText isInFooter={true}
+                            >Навигация</SubHeadlineText
+                        >
                     </li>
                     <li class="footer__nav-item">
-                        <a href="#" class="footer__nav-link">123</a>
+                        <a href="#" class="footer__nav-link">Главная</a>
                     </li>
                     <li class="footer__nav-item">
-                        <a href="#" class="footer__nav-link">12233</a>
+                        <a href="#" class="footer__nav-link">Тесты</a>
                     </li>
                     <li class="footer__nav-item">
-                        <a href="#" class="footer__nav-link">3123</a>
+                        <a href="#" class="footer__nav-link">Профиль</a>
                     </li>
                 </ul>
             </nav>
-            <div class="footer__vertical-box">
-                <GoUpBtn></GoUpBtn>
-                <div class="footer__social-links"></div>
-            </div>
+            <GoUpBtn></GoUpBtn>
         </div>
     </Container>
 </footer>
@@ -40,12 +39,39 @@
     @import "../styles/index.scss";
 
     .footer {
+        margin-top: 30px;
         background-color: $primaryColor;
         padding: 10px 0 10px 0;
         &__box {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        &__nav {
+            &-list {
+            }
+            &-item {
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+            &-link {
+                text-decoration: none;
+                font-family: $secondaryFontFamily;
+                font-weight: $bodyFontWeight;
+                font-size: $bodyFontSize;
+                color: #fff;
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .footer {
+            position: relative;
+            &__box {
+                display: block;
+            }
         }
     }
 </style>

@@ -1,8 +1,9 @@
 <script lang="ts">
+    export let isInFooter: boolean = false;
     export let link: string = "";
 </script>
 
-<span class="h2-text">
+<span class="h2-text {isInFooter ? 'footer' : ''}">
     {#if link === ""}
         <slot />
     {:else}
@@ -24,6 +25,9 @@
             font-weight: inherit;
             font-size: inherit;
             color: inherit;
+        }
+        &.footer {
+            color: #fff;
         }
     }
 
