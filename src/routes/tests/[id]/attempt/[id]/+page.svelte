@@ -7,6 +7,12 @@
     import ProgressIndicator from "$lib/components/ProgressIndicator.svelte";
     import SingleOption from "$lib/components/cards/questions/SingleOption.svelte";
     import MultiOption from "$lib/components/cards/questions/MultiOption.svelte";
+    import OpenOption from "$lib/components/cards/questions/OpenOption.svelte";
+    import ScaleOption from "$lib/components/cards/questions/ScaleOption.svelte";
+    import IntroOption from "$lib/components/cards/questions/IntroOption.svelte";
+    import ImageOption from "$lib/components/cards/questions/ImageOption.svelte";
+    import SingleMatrixOption from "$lib/components/cards/questions/SingleMatrixOption.svelte";
+    import MultiMatrixOption from "$lib/components/cards/questions/MultiMatrixOption.svelte";
 </script>
 
 <main class="main">
@@ -26,6 +32,12 @@
             <div class="attempt__body">
                 <SingleOption></SingleOption>
                 <MultiOption></MultiOption>
+                <ScaleOption></ScaleOption>
+                <ImageOption></ImageOption>
+                <IntroOption></IntroOption>
+                <OpenOption></OpenOption>
+                <SingleMatrixOption></SingleMatrixOption>
+                <MultiMatrixOption></MultiMatrixOption>
             </div>
             <div class="attempt__buttons">
                 <DefaultBtn text="Далее"></DefaultBtn>
@@ -65,6 +77,14 @@
             grid-template-rows: 1fr;
             column-gap: 15px;
             max-width: 600px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .attempt__buttons {
+            grid-template-columns: 1fr;
+            row-gap: 15px;
+            grid-template-rows: 1fr 1fr;
         }
     }
 </style>

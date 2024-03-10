@@ -16,7 +16,7 @@
 <style lang="scss">
     .options {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         row-gap: 15px;
         column-gap: 15px;
         margin-top: 30px;
