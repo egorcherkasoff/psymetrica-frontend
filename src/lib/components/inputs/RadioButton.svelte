@@ -2,11 +2,14 @@
     import SignText from "$lib/components/text/SignText.svelte";
     export let id: string;
     export let group: string;
+    export let isWithLabel: boolean = true;
 </script>
 
 <div class="radio">
     <input type="radio" {id} name={group} />
-    <label for={id}><SignText><slot /></SignText></label>
+    {#if isWithLabel}
+        <label for={id}><SignText><slot /></SignText></label>
+    {/if}
 </div>
 
 <style lang="scss">
@@ -14,8 +17,6 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        input {
-        }
         label {
             margin-left: 10px;
             cursor: pointer;
