@@ -10,6 +10,9 @@
     import TextInput from "$lib/components/inputs/TextInput.svelte";
     import DatePicker from "$lib/components/inputs/DatePicker.svelte";
     import ZebraList from "$lib/components/lists/ZebraList.svelte";
+    import AttemptCard from "$lib/components/cards/AttemptCard.svelte";
+    import PaginationGroup from "$lib/components/navigation/PaginationGroup.svelte";
+    import PageBtn from "$lib/components/buttons/PageBtn.svelte";
 </script>
 
 <main class="main">
@@ -33,7 +36,36 @@
             </Filter>
         </div>
         <div class="attempts">
-            <ZebraList></ZebraList>
+            <ZebraList>
+                <AttemptCard
+                    user="Иван Иванов"
+                    id="wdasdas"
+                    createdAt="02.03.2024"
+                ></AttemptCard>
+                <AttemptCard
+                    user="Иван Иванов"
+                    id="wdasdas"
+                    createdAt="02.03.2024"
+                ></AttemptCard>
+                <AttemptCard
+                    user="Иван Иванов"
+                    id="wdasdas"
+                    createdAt="02.03.2024"
+                ></AttemptCard>
+                <AttemptCard
+                    user="Иван Иванов"
+                    id="wdasdas"
+                    createdAt="02.03.2024"
+                ></AttemptCard>
+            </ZebraList>
+            <div class="attempts__navigation">
+                <PaginationGroup>
+                    <PageBtn>&lsaquo;</PageBtn>
+                    <PageBtn>1</PageBtn>
+                    <PageBtn>2</PageBtn>
+                    <PageBtn isActive={true}>3</PageBtn>
+                </PaginationGroup>
+            </div>
         </div>
     </Container>
 </main>
@@ -58,5 +90,8 @@
 
     .attempts {
         margin-top: 30px;
+        &__navigation {
+            margin-top: 30px;
+        }
     }
 </style>
