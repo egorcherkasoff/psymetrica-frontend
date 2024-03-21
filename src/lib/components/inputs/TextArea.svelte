@@ -5,14 +5,13 @@
 
 <div class="text-area">
     <label for={fieldName}>{fieldName}</label>
-    <textarea id={fieldName} placeholder="{placeholder}..." rows="3" />
+    <textarea id={fieldName} placeholder="{placeholder}..." rows="6" />
 </div>
 
 <style lang="scss">
     @import "../../styles/index.scss";
 
     .text-area {
-        margin-top: 15px;
         max-width: 800px;
         & label {
             display: block;

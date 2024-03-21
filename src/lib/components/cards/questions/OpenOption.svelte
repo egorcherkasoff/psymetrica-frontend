@@ -13,4 +13,7 @@
 </Card>
 
 <style lang="scss">
+    .answer {
+        margin-top: 15px;
+    }
 </style>

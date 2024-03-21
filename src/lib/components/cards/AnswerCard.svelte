@@ -30,8 +30,6 @@
         align-items: center;
         justify-content: space-between;
         &__divider {
-            margin-top: 5px;
-            margin-bottom: 5px;
             display: none;
         }
         &__link {
@@ -50,7 +48,6 @@
 
     @media screen and (max-width: 576px) {
         .attempt {
-            display: block;
             &__divider {
                 display: block;
             }

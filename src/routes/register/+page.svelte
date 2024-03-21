@@ -27,10 +27,12 @@
                             fieldName="Эл. почта"
                         ></TextInput>
                         <TextInput
+                            isObscured={true}
                             placeholder="Введите пароль"
                             fieldName="Пароль"
                         ></TextInput>
                         <TextInput
+                            isObscured={true}
                             placeholder="Подтвердите пароль"
                             fieldName="Подтверждение пароля"
                         ></TextInput>
