@@ -1,7 +1,8 @@
 <script lang="ts">
+    export let isError: boolean = false;
 </script>
 
-<span class="sign-text">
+<span class="sign-text {!isError ? '' : 'error'}">
     <slot />
 </span>
 
@@ -13,5 +14,8 @@
         font-weight: $subtitleFontWeight;
         font-size: $subtitleFontSize;
         color: $textColor;
+        &.error {
+            color: $errorColor;
+        }
     }
 </style>

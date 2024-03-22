@@ -7,6 +7,7 @@
     import HeadlineText from "$lib/components/text/HeadlineText.svelte";
     import DefaultBtn from "$lib/components/buttons/DefaultBtn.svelte";
     import OutlinedBtn from "$lib/components/buttons/OutlinedBtn.svelte";
+    import { enhance } from "$app/forms";
 </script>
 
 <svelte:head>
@@ -17,23 +18,26 @@
     <Container>
         <div class="auth">
             <Card isFullWidth={true}>
-                <form action="" class="auth__form">
+                <form method="POST" class="auth__form" use:enhance>
                     <InputGroupVertical>
                         <HeadlineText>
                             <h1>Вход в приложение</h1>
                         </HeadlineText>
                         <TextInput
+                            name="email"
+                            type="email"
                             placeholder="Введите адрес вашей эл.почты"
                             fieldName="Эл. почта"
                         ></TextInput>
                         <TextInput
+                            name="password"
+                            type="password"
                             placeholder="Введите ваш пароль"
                             fieldName="Пароль"
-                            isObscured={true}
                         ></TextInput>
                     </InputGroupVertical>
                     <div class="auth__form-buttons">
-                        <DefaultBtn text="Войти"></DefaultBtn>
+                        <DefaultBtn type="submit" text="Войти"></DefaultBtn>
                         <OutlinedBtn text="Нет аккаунта? Зарегистрируйтесь"
                         ></OutlinedBtn>
                     </div>

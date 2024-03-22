@@ -1,9 +1,10 @@
 <script lang="ts">
     export let text: string;
+    export let type: HTMLButtonElement["type"];
 </script>
 
 <div class="default-btn">
-    <button type="button">{text}</button>
+    <button {type}>{text}</button>
 </div>
 
 <style lang="scss">

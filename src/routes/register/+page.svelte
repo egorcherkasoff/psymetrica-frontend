@@ -7,6 +7,8 @@
     import HeadlineText from "$lib/components/text/HeadlineText.svelte";
     import DefaultBtn from "$lib/components/buttons/DefaultBtn.svelte";
     import OutlinedBtn from "$lib/components/buttons/OutlinedBtn.svelte";
+    import SignText from "$lib/components/text/SignText.svelte";
+    export let form;
 </script>
 
 <svelte:head>
@@ -17,28 +19,43 @@
     <Container>
         <div class="auth">
             <Card isFullWidth={true}>
-                <form action="" class="auth__form">
+                <form method="POST" class="auth__form">
                     <InputGroupVertical>
                         <HeadlineText>
                             <h1>Регистрация</h1>
                         </HeadlineText>
                         <TextInput
+                            type="email"
+                            name="email"
                             placeholder="Введите адрес вашей эл.почты"
                             fieldName="Эл. почта"
+                            isRequired={true}
                         ></TextInput>
                         <TextInput
-                            isObscured={true}
+                            type="password"
+                            name="password1"
                             placeholder="Введите пароль"
                             fieldName="Пароль"
+                            isRequired={true}
                         ></TextInput>
                         <TextInput
-                            isObscured={true}
+                            type="password"
+                            name="password2"
                             placeholder="Подтвердите пароль"
                             fieldName="Подтверждение пароля"
+                            isRequired={true}
                         ></TextInput>
                     </InputGroupVertical>
+                    {#if form?.error}
+                        <div class="auth__form-error">
+                            <SignText isError={true}
+                                ><p>{form?.error}</p></SignText
+                            >
+                        </div>
+                    {/if}
                     <div class="auth__form-buttons">
-                        <DefaultBtn text="Зарегистрироваться"></DefaultBtn>
+                        <DefaultBtn type="submit" text="Зарегистрироваться"
+                        ></DefaultBtn>
                         <OutlinedBtn text="Уже есть аккаунт? Войдите"
                         ></OutlinedBtn>
                     </div>
@@ -70,6 +87,9 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+            }
+            &-error {
+                margin-bottom: 10px;
             }
         }
     }

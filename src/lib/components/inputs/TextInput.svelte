@@ -1,14 +1,18 @@
 <script lang="ts">
     export let placeholder: string = "Введите текст...";
     export let fieldName: string;
-    export let isObscured: boolean = false;
+    export let name: string;
+    export let type: string = "text";
+    export let isRequired: boolean = false;
 </script>
 
 <div class="text-input">
     <label for={fieldName}>{fieldName}</label>
     <input
         id={fieldName}
-        type={isObscured ? "password" : "text"}
+        {name}
+        {type}
+        required={isRequired}
         placeholder="{placeholder}..."
     />
 </div>
