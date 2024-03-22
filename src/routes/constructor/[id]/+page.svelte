@@ -11,6 +11,7 @@
     import GeneralInfo from "$lib/components/cards/constructor/GeneralInfo.svelte";
     import StarterPage from "$lib/components/cards/constructor/StarterPage.svelte";
     import FinishPage from "$lib/components/cards/constructor/FinishPage.svelte";
+    import BlockList from "$lib/components/cards/constructor/BlockList.svelte";
 </script>
 
 <main class="main">
@@ -20,6 +21,7 @@
                 <GeneralInfo></GeneralInfo>
                 <StarterPage></StarterPage>
                 <FinishPage></FinishPage>
+                <BlockList></BlockList>
             </div>
             <div class="constructor__questions"></div>
         </div>
