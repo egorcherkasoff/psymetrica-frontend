@@ -15,4 +15,4 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     container_name: psymetrica-front-webserver
     ports:
-      - 8080:80
+      - 80:80
