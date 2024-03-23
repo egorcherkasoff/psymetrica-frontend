@@ -1,4 +1,4 @@
-import type { Actions } from "@sveltejs/kit";
+import { fail, type Actions } from "@sveltejs/kit";
 import axios from "axios";
 
 export const actions: Actions = {
@@ -6,6 +6,12 @@ export const actions: Actions = {
         const data = await request.formData();
         const email = data.get("email");
         const password = data.get("password");
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email.toString())) {
+            return fail(400, { error: "Неверный формат эл. почты" });
+        }
+
         try {
             const { data } = await axios.post("http://localhost:8080/api/auth/jwt/create/",
                 {

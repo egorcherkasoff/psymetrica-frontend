@@ -8,6 +8,15 @@
     import TestCard from "$lib/components/cards/TestCard.svelte";
     import PaginationGroup from "$lib/components/navigation/PaginationGroup.svelte";
     import PageBtn from "$lib/components/buttons/PageBtn.svelte";
+    import { page } from "$app/stores";
+    import { type Pagination, type TestListItem } from "$lib/types";
+
+    const results: TestListItem[] = $page.data.results as TestListItem[];
+    const pagination: Pagination = {
+        count: $page.data.count,
+        next: $page.data.next,
+        previous: $page.data.previous,
+    };
 </script>
 
 <main class="main">
@@ -17,10 +26,14 @@
         </HeadlineText>
         <Filter>
             <TextInput
+                name="title"
                 placeholder="Введите название теста..."
                 fieldName="Название"
             ></TextInput>
-            <TextInput placeholder="Введите имя автора..." fieldName="Автор"
+            <TextInput
+                name="author"
+                placeholder="Введите имя автора..."
+                fieldName="Автор"
             ></TextInput>
             <DropDown fieldName="Категория" placeholder="Выберите категорию...">
                 <option value="123123">123123</option>
@@ -30,62 +43,32 @@
         </Filter>
         <div class="tests-box">
             <GridList>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
+                {#if results && results.length > 0}
+                    {#each results as item}
+                        <TestCard
+                            author={item.author}
+                            createdAt={item.created_at}
+                            id={item.id}
+                            timesPassed={256}
+                            title={item.title}
+                        ></TestCard>
+                    {:else}
+                        <p>Нет доступных тестов</p>
+                    {/each}
+                {/if}
             </GridList>
             <div class="pagination">
-                <PaginationGroup>
-                    <PageBtn>&lsaquo;</PageBtn>
-                    <PageBtn>1</PageBtn>
-                    <PageBtn isActive={true}>2</PageBtn>
-                </PaginationGroup>
+                {#if pagination && pagination.count > 1}
+                    <PaginationGroup>
+                        {#if pagination.previous && pagination.previous !== null}
+                            <PageBtn>&lsaquo;</PageBtn>
+                        {/if}
+                        <PageBtn isActive={true}>1</PageBtn>
+                        {#if pagination.next && pagination.next !== null}
+                            <PageBtn>&rsaquo;</PageBtn>
+                        {/if}
+                    </PaginationGroup>
+                {/if}
             </div>
         </div>
     </Container>

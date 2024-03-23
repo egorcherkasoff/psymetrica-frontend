@@ -6,17 +6,21 @@
     import Tabs from "$lib/components/navigation/Tabs.svelte";
     import GridList from "$lib/components/lists/GridList.svelte";
     import TestCard from "$lib/components/cards/TestCard.svelte";
+    import { page } from "$app/stores";
+
+    const user = {
+        id: $page.data.id,
+        name: $page.data.name,
+        avatar: `http://localhost:8080${$page.data.avatar}`,
+    };
 </script>
 
 <main class="main">
     <Container>
         <div class="info-box">
-            <AvatarBig
-                src="https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-krasivaya-panda.jpg"
-                link=""
-            ></AvatarBig>
+            <AvatarBig src={user.avatar} link=""></AvatarBig>
             <h1 class="info-box__text">
-                <HeadlineText>Иван Иванов</HeadlineText>
+                <HeadlineText>{user.name}</HeadlineText>
             </h1>
         </div>
         <Tabs>
