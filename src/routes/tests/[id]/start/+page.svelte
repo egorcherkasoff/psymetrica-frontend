@@ -8,6 +8,10 @@
     import SignText from "$lib/components/text/SignText.svelte";
 </script>
 
+<svelte:head>
+    <title>Начать тест Кто ты из слова пацана? | Psymetrica</title>
+</svelte:head>
+
 <main class="main">
     <Container>
         <div class="test">
@@ -31,7 +35,7 @@
                     <p>Тест содержит 30 вопросов.</p>
                 </SignText>
             </div>
-            <DefaultBtn text="Начать тест"></DefaultBtn>
+            <DefaultBtn type="submit" text="Начать тест"></DefaultBtn>
         </div>
     </Container>
 </main>

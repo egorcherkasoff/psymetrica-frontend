@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Psymetrica | Главная</title>
+    <title>Главная | Psymetrica</title>
 </svelte:head>
 
 <main class="main">1</main>

@@ -11,7 +11,7 @@
     import { page } from "$app/stores";
     import { type Pagination, type TestListItem } from "$lib/types";
 
-    const results: TestListItem[] = $page.data.results as TestListItem[];
+    const tests: TestListItem[] = $page.data.results as TestListItem[];
     const pagination: Pagination = {
         count: $page.data.count,
         next: $page.data.next,
@@ -19,38 +19,47 @@
     };
 </script>
 
+<svelte:head>
+    <title>Тесты | Psymetrica</title>
+</svelte:head>
+
 <main class="main">
     <Container>
         <HeadlineText>
             <h1>Тесты</h1>
         </HeadlineText>
-        <Filter>
-            <TextInput
-                name="title"
-                placeholder="Введите название теста..."
-                fieldName="Название"
-            ></TextInput>
-            <TextInput
-                name="author"
-                placeholder="Введите имя автора..."
-                fieldName="Автор"
-            ></TextInput>
-            <DropDown fieldName="Категория" placeholder="Выберите категорию...">
-                <option value="123123">123123</option>
-                <option value="123123">123123</option>
-                <option value="123123">123123</option>
-            </DropDown>
-        </Filter>
+        <div class="filter">
+            <Filter>
+                <TextInput
+                    name="title"
+                    placeholder="Введите название теста..."
+                    fieldName="Название"
+                ></TextInput>
+                <TextInput
+                    name="author"
+                    placeholder="Введите имя автора..."
+                    fieldName="Автор"
+                ></TextInput>
+                <DropDown
+                    fieldName="Категория"
+                    placeholder="Выберите категорию..."
+                >
+                    <option value="123123">123123</option>
+                    <option value="123123">123123</option>
+                    <option value="123123">123123</option>
+                </DropDown>
+            </Filter>
+        </div>
         <div class="tests-box">
             <GridList>
-                {#if results && results.length > 0}
-                    {#each results as item}
+                {#if tests && tests.length > 0}
+                    {#each tests as test}
                         <TestCard
-                            author={item.author}
-                            createdAt={item.created_at}
-                            id={item.id}
+                            author={test.author}
+                            createdAt={test.created_at}
+                            id={test.id}
                             timesPassed={256}
-                            title={item.title}
+                            title={test.title}
                         ></TestCard>
                     {:else}
                         <p>Нет доступных тестов</p>
@@ -75,6 +84,9 @@
 </main>
 
 <style lang="scss">
+    .filter {
+        margin-top: 15px;
+    }
     .main {
         padding-top: 160px;
     }

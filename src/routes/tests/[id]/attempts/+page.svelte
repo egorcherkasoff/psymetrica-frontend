@@ -15,6 +15,10 @@
     import PageBtn from "$lib/components/buttons/PageBtn.svelte";
 </script>
 
+<svelte:head>
+    <title>Прохождения теста Кто ты из слова пацана? | Psymetrica</title>
+</svelte:head>
+
 <main class="main">
     <Container>
         <div class="test">
@@ -28,6 +32,7 @@
         <div class="filter">
             <Filter>
                 <TextInput
+                    name="user"
                     placeholder="Имя пользователя"
                     fieldName="Имя пользователя"
                 ></TextInput>

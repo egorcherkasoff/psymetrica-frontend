@@ -21,3 +21,11 @@ export type TestListItem = {
   questions: number;
   created_at: string;
 }
+
+
+export type UserProfile = {
+  id: string;
+  name: string;
+  avatar: string;
+  tests: TestListItem[] | null;
+}

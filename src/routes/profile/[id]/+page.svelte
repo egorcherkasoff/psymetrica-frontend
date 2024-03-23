@@ -8,17 +8,17 @@
     import TestCard from "$lib/components/cards/TestCard.svelte";
     import { page } from "$app/stores";
 
-    const user = {
-        id: $page.data.id,
-        name: $page.data.name,
-        avatar: `http://localhost:8080${$page.data.avatar}`,
-    };
+    const user = $page.data;
 </script>
 
+<svelte:head>
+    <title>Профиль пользователя {user.name} | Psymetrica</title>
+</svelte:head>
 <main class="main">
     <Container>
         <div class="info-box">
-            <AvatarBig src={user.avatar} link=""></AvatarBig>
+            <AvatarBig src={`http://localhost:8080${user.avatar}`} link=""
+            ></AvatarBig>
             <h1 class="info-box__text">
                 <HeadlineText>{user.name}</HeadlineText>
             </h1>
@@ -29,41 +29,17 @@
         </Tabs>
         <div class="profile-tests">
             <GridList>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
-                <TestCard
-                    author="Иван Иванов"
-                    createdAt="01.01.2023"
-                    id="1"
-                    timesPassed={256}
-                    title="Кто ты из слова пацана"
-                ></TestCard>
+                {#if user.results && user.results.length > 0}
+                    {#each user.results as test}
+                        <TestCard
+                            author={test.author}
+                            createdAt={test.created_at}
+                            id={test.id}
+                            timesPassed={256}
+                            title={test.title}
+                        ></TestCard>
+                    {/each}
+                {/if}
             </GridList>
         </div>
     </Container>

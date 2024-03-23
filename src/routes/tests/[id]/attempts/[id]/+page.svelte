@@ -21,6 +21,12 @@
     let chartIsBar: boolean = true;
 </script>
 
+<svelte:head>
+    <title>
+        Прохождение теста Кто ты из слова пацана? пользователем Иван иванов</title
+    >
+</svelte:head>
+
 <main class="main">
     <Container>
         <div class="attempt">

@@ -15,6 +15,10 @@
     import MultiMatrixOption from "$lib/components/cards/questions/MultiMatrixOption.svelte";
 </script>
 
+<svelte:head>
+    <title>Прохождение теста | Psymetrica</title>
+</svelte:head>
+
 <main class="main">
     <Container>
         <div class="attempt">
@@ -40,8 +44,8 @@
                 <MultiMatrixOption></MultiMatrixOption>
             </div>
             <div class="attempt__buttons">
-                <DefaultBtn text="Далее"></DefaultBtn>
-                <OutlinedBtn text="Прекратить тест"></OutlinedBtn>
+                <DefaultBtn type="submit" text="Далее"></DefaultBtn>
+                <OutlinedBtn type="button" text="Прекратить тест"></OutlinedBtn>
             </div>
         </div>
     </Container>

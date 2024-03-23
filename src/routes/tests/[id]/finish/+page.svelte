@@ -8,6 +8,10 @@
     import SignText from "$lib/components/text/SignText.svelte";
 </script>
 
+<svelte:head>
+    <title>Тест завершен | Psymetrica</title>
+</svelte:head>
+
 <main class="main">
     <Container>
         <div class="test">
@@ -26,7 +30,7 @@
                     </p>
                 </BodyText>
             </div>
-            <OutlinedBtn text="Далее"></OutlinedBtn>
+            <OutlinedBtn type="button" text="Далее"></OutlinedBtn>
         </div>
     </Container>
 </main>
@@ -47,9 +51,6 @@
         &__bye {
             margin-top: 15px;
             margin-bottom: 15px;
-        }
-        &__question-count {
-            margin: 15px 0 15px 0;
         }
     }
 </style>

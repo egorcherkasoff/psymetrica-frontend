@@ -14,6 +14,10 @@
     import BlockList from "$lib/components/cards/constructor/BlockList.svelte";
 </script>
 
+<svelte:head>
+    <title>Конструктор теста Кто ты из слова пацана? | Psymetrica</title>
+</svelte:head>
+
 <main class="main">
     <Container>
         <div class="constructor">

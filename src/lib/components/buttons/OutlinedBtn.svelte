@@ -1,9 +1,18 @@
 <script lang="ts">
     export let text: string;
+    export let type: HTMLButtonElement["type"];
+
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
+
+    function buttonEvent() {
+        dispatch("click");
+    }
 </script>
 
 <div class="outlined-btn">
-    <button>{text}</button>
+    <button {type} on:click={buttonEvent}>{text}</button>
 </div>
 
 <style lang="scss">

@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-    <title>Psymetrica | Регистрация</title>
+    <title>Регистрация | Psymetrica</title>
 </svelte:head>
 
 <main class="main">
@@ -56,7 +56,9 @@
                     <div class="auth__form-buttons">
                         <DefaultBtn type="submit" text="Зарегистрироваться"
                         ></DefaultBtn>
-                        <OutlinedBtn text="Уже есть аккаунт? Войдите"
+                        <OutlinedBtn
+                            type="button"
+                            text="Уже есть аккаунт? Войдите"
                         ></OutlinedBtn>
                     </div>
                 </form>

@@ -1,23 +1,33 @@
 <script lang="ts">
+    import { slide } from "svelte/transition";
     import DefaultBtn from "./buttons/DefaultBtn.svelte";
     import OutlinedBtn from "./buttons/OutlinedBtn.svelte";
     import Card from "./cards/Card.svelte";
-    let isActive: boolean = false;
+    let isActive: boolean;
+    $: isActive = false;
+
+    function showFilter() {
+        isActive = !isActive;
+    }
 </script>
 
-{#if isActive === false}
+{#if !isActive}
     <div class="filter-btn">
-        <button on:click={() => (isActive = !isActive)}>123123</button>
-        <DefaultBtn text="Фильтр"></DefaultBtn>
+        <DefaultBtn type="button" text="Фильтр" on:click={showFilter}
+        ></DefaultBtn>
     </div>
 {:else}
-    <div class="filter active">
+    <div class="filter active" transition:slide>
         <Card>
             <div class="filter__fields">
                 <slot />
             </div>
             <div class="fliter-btn">
-                <OutlinedBtn text="Сбросить фильтр"></OutlinedBtn>
+                <OutlinedBtn
+                    type="submit"
+                    text="Сбросить фильтр"
+                    on:click={showFilter}
+                ></OutlinedBtn>
             </div>
         </Card>
     </div>
