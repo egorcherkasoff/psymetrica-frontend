@@ -22,7 +22,8 @@
             <div class="filter__fields">
                 <slot />
             </div>
-            <div class="fliter-btn">
+            <div class="filter__buttons">
+                <DefaultBtn type="submit" text="Применить фильтр"></DefaultBtn>
                 <OutlinedBtn
                     type="submit"
                     text="Сбросить фильтр"
@@ -41,6 +42,22 @@
         &-btn {
             max-width: 500px;
             width: 100%;
+        }
+        &__buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            column-gap: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .filter {
+            &__buttons {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                row-gap: 15px;
+            }
         }
     }
 </style>

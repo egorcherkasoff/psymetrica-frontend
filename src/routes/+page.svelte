@@ -7,14 +7,15 @@
     <title>Главная | Psymetrica</title>
 </svelte:head>
 
-<main class="main">1</main>
+<main class="main mt-header">
+    <Container>контент главной страницы</Container>
+</main>
 
 <style lang="scss">
     @import "../lib/styles/index.scss";
 
     .main {
         position: relative;
-        height: 100vh;
         width: 100%;
         background-color: #fff;
     }

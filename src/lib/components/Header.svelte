@@ -4,8 +4,18 @@
     import BurgerBtn from "./buttons/BurgerBtn.svelte";
     import AvatarSmall from "./avatars/AvatarSmall.svelte";
     import SearchInput from "./inputs/SearchInput.svelte";
+    import Card from "./cards/Card.svelte";
+    import BodyText from "./text/BodyText.svelte";
+    import { slide } from "svelte/transition";
 
-    let isBurgerActive = false;
+    let isBurgerActive: boolean;
+    $: isBurgerActive = false;
+
+    const toggleBurger = () => {
+        console.log("isBurgerActive", isBurgerActive);
+
+        isBurgerActive = !isBurgerActive;
+    };
 </script>
 
 <header class="header">
@@ -22,7 +32,7 @@
                 </li>
                 <li class="">
                     <div class="header__nav-block">
-                        <BurgerBtn />
+                        <BurgerBtn on:click={toggleBurger} />
                         <AvatarSmall
                             src="https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-krasivaya-panda.jpg"
                             link="/login"
@@ -34,18 +44,34 @@
     </Container>
 </header>
 
+{#if isBurgerActive}
+    <div class="menu">
+        <Container>
+            <ul class="menu__list">
+                <li class="menu__list-item">Уведомления</li>
+                <li class="menu__list-item">Че то еще</li>
+                <li class="menu__list-item">Еще ссылочка</li>
+                <li class="menu__list-item">тут поиск мб?</li>
+            </ul>
+        </Container>
+    </div>
+{/if}
+
 <style lang="scss">
     @import "../styles/index.scss";
 
-    // стили
+    .menu {
+        background-color: $tableColor;
+    }
+
     .header {
         z-index: 3;
-        height: 80px;
         position: fixed;
         right: 0;
         left: 0;
         &__nav {
-            height: 100%;
+            height: 80px;
+            // height: 100%;
             &-list {
                 height: 100%;
                 display: flex;

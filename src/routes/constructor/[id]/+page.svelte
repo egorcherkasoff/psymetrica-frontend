@@ -18,7 +18,7 @@
     <title>Конструктор теста Кто ты из слова пацана? | Psymetrica</title>
 </svelte:head>
 
-<main class="main">
+<main class="main mt-header">
     <Container>
         <div class="constructor">
             <div class="constructor__general">
@@ -33,7 +33,4 @@
 </main>
 
 <style lang="scss">
-    .main {
-        padding-top: 160px;
-    }
 </style>

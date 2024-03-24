@@ -8,13 +8,14 @@
     import DefaultBtn from "$lib/components/buttons/DefaultBtn.svelte";
     import OutlinedBtn from "$lib/components/buttons/OutlinedBtn.svelte";
     import { enhance } from "$app/forms";
+    import { goto } from "$app/navigation";
 </script>
 
 <svelte:head>
     <title>Вход в приложение | Psymetrica</title>
 </svelte:head>
 
-<main class="main">
+<main class="main mt-header">
     <Container>
         <div class="auth">
             <Card isFullWidth={true}>
@@ -24,12 +25,14 @@
                             <h1>Вход в приложение</h1>
                         </HeadlineText>
                         <TextInput
+                            isRequired={true}
                             name="email"
                             type="email"
                             placeholder="Введите адрес вашей эл.почты"
                             fieldName="Эл. почта"
                         ></TextInput>
                         <TextInput
+                            isRequired={true}
                             name="password"
                             type="password"
                             placeholder="Введите ваш пароль"
@@ -39,6 +42,7 @@
                     <div class="auth__form-buttons">
                         <DefaultBtn type="submit" text="Войти"></DefaultBtn>
                         <OutlinedBtn
+                            on:click={() => goto("/register")}
                             type="button"
                             text="Нет аккаунта? Зарегистрируйтесь"
                         ></OutlinedBtn>
@@ -52,9 +56,6 @@
 <style lang="scss">
     @import "../../lib/styles/index.scss";
 
-    .main {
-        height: 100vh;
-    }
     .auth {
         margin-left: auto;
         margin-right: auto;

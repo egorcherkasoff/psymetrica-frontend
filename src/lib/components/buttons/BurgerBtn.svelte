@@ -1,16 +1,29 @@
 <script lang="ts">
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
+
+    const buttonEvent = () => {
+        dispatch("click");
+    };
 </script>
 
-<div class="burger">
+<button type="button" class="burger" on:click={buttonEvent}>
     <span class="burger__line"></span>
     <span class="burger__line"></span>
     <span class="burger__line"></span>
-</div>
+</button>
 
 <style lang="scss">
     @import "../../styles/index";
 
     .burger {
+        background: transparent;
+        outline: none;
+        border: 0;
+        &:active {
+            outline: none;
+        }
         cursor: pointer;
         margin-right: 40px;
         &__line {

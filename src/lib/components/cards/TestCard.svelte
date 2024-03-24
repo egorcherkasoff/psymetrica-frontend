@@ -4,7 +4,8 @@
     import BodyText from "../text/BodyText.svelte";
     import SubHeadlineText from "../text/SubHeadlineText.svelte";
     export let title: string;
-    export let author: string;
+    export let authorId: string;
+    export let authorName: string;
     export let id: string = "/";
     export let timesPassed: number;
     export let createdAt: string;
@@ -16,7 +17,7 @@
             <SubHeadlineText link="tests/{id}/start">
                 {title}</SubHeadlineText
             >
-            <BodyText>{author}</BodyText>
+            <a href="/profile/{authorId}"><BodyText>{authorName}</BodyText></a>
             <BodyText>Пройдено: {timesPassed} раз(а)</BodyText>
             <BodyText>Добавлен {createdAt}</BodyText>
         </div>

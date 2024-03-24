@@ -18,7 +18,11 @@
     import ChartPie from "$lib/components/cards/ChartPie.svelte";
     import Checkbox from "$lib/components/inputs/Checkbox.svelte";
 
-    let chartIsBar: boolean = true;
+    let chartIsBar: boolean;
+    $: chartIsBar = true;
+    const changeChartType = () => {
+        chartIsBar = !chartIsBar;
+    };
 </script>
 
 <svelte:head>
@@ -27,7 +31,7 @@
     >
 </svelte:head>
 
-<main class="main">
+<main class="main mt-header">
     <Container>
         <div class="attempt">
             <div class="attempt__info">
@@ -58,7 +62,9 @@
                 <HorizontalDivider></HorizontalDivider>
                 <div class="attempt__overview-scales">
                     <BodyText><p>Баллы по шкалам теста</p></BodyText>
-                    <Checkbox id="123123">Изменить тип диаграмы</Checkbox>
+                    <Checkbox on:click={changeChartType} id="123123"
+                        >Изменить тип диаграмы</Checkbox
+                    >
                     {#if chartIsBar}
                         <ChartBar></ChartBar>
                     {:else}
@@ -91,10 +97,6 @@
 
 <style lang="scss">
     @import "../../../../../lib/styles/index.scss";
-
-    .main {
-        padding-top: 160px;
-    }
 
     .attempt {
         &__info {

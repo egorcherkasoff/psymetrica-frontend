@@ -1,10 +1,18 @@
 <script lang="ts">
     import SignText from "$lib/components/text/SignText.svelte";
+    import { createEventDispatcher } from "svelte";
+
     export let id: string;
+
+    const dispatch = createEventDispatcher();
+
+    const checkboxEvent = () => {
+        dispatch("click");
+    };
 </script>
 
 <div class="checkbox">
-    <input type="checkbox" {id} />
+    <input type="checkbox" {id} on:change={checkboxEvent} />
     <label for={id}><SignText><slot /></SignText></label>
 </div>
 
@@ -13,8 +21,6 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        input {
-        }
         label {
             margin-left: 10px;
             cursor: pointer;

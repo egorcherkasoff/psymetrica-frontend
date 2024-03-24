@@ -14,7 +14,7 @@
 <svelte:head>
     <title>Профиль пользователя {user.name} | Psymetrica</title>
 </svelte:head>
-<main class="main">
+<main class="main mt-header">
     <Container>
         <div class="info-box">
             <AvatarBig src={`http://localhost:8080${user.avatar}`} link=""
@@ -32,7 +32,8 @@
                 {#if user.results && user.results.length > 0}
                     {#each user.results as test}
                         <TestCard
-                            author={test.author}
+                            authorId={test.author.id}
+                            authorName={test.author.name}
                             createdAt={test.created_at}
                             id={test.id}
                             timesPassed={256}
@@ -47,10 +48,6 @@
 
 <style lang="scss">
     @import "../../../lib/styles/index.scss";
-
-    .main {
-        padding-top: 160px;
-    }
 
     .info-box {
         display: flex;

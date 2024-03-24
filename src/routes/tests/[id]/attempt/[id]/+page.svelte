@@ -19,7 +19,7 @@
     <title>Прохождение теста | Psymetrica</title>
 </svelte:head>
 
-<main class="main">
+<main class="main mt-header">
     <Container>
         <div class="attempt">
             <div class="attempt__head">
@@ -53,10 +53,6 @@
 
 <style lang="scss">
     @import "../../../../../lib/styles/index.scss";
-
-    .main {
-        padding-top: 160px;
-    }
 
     .attempt {
         &__head {

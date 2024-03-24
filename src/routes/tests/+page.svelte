@@ -23,7 +23,7 @@
     <title>Тесты | Psymetrica</title>
 </svelte:head>
 
-<main class="main">
+<main class="main mt-header">
     <Container>
         <HeadlineText>
             <h1>Тесты</h1>
@@ -55,7 +55,8 @@
                 {#if tests && tests.length > 0}
                     {#each tests as test}
                         <TestCard
-                            author={test.author}
+                            authorId={test.author.id}
+                            authorName={test.author.name}
                             createdAt={test.created_at}
                             id={test.id}
                             timesPassed={256}
@@ -86,9 +87,6 @@
 <style lang="scss">
     .filter {
         margin-top: 15px;
-    }
-    .main {
-        padding-top: 160px;
     }
     .tests-box {
         margin-top: 30px;

@@ -15,3 +15,32 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #1086ad;
 }
+
+.mt-header {
+    padding-top: 140px;
+}
+
+.mt-medium {
+    margin-top: 30px;
+}
+
+.mt-small {
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 992px) {
+    .mt-header {
+        padding-top: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mt-header {
+        padding-top: 80px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .mt-header {
+        padding-top: 60px;
+    }
+}

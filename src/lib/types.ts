@@ -10,11 +10,16 @@ export type Pagination = {
   previous: number | null;
 }
 
+export type User = {
+  id: string;
+  name: string;
+  avatar: string;
+}
 
 export type TestListItem = {
   id: string;
   title: string;
-  author: string;
+  author: User;
   description?: string | null;
   category?: string | null;
   slug: string;

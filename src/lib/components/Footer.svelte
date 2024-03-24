@@ -20,13 +20,13 @@
                         >
                     </li>
                     <li class="footer__nav-item">
-                        <a href="#" class="footer__nav-link">Главная</a>
+                        <a href="/" class="footer__nav-link">Главная</a>
                     </li>
                     <li class="footer__nav-item">
-                        <a href="#" class="footer__nav-link">Тесты</a>
+                        <a href="/tests" class="footer__nav-link">Тесты</a>
                     </li>
                     <li class="footer__nav-item">
-                        <a href="#" class="footer__nav-link">Профиль</a>
+                        <a href="/profile" class="footer__nav-link">Профиль</a>
                     </li>
                 </ul>
             </nav>

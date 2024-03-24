@@ -13,13 +13,14 @@
     import AttemptCard from "$lib/components/cards/AttemptCard.svelte";
     import PaginationGroup from "$lib/components/navigation/PaginationGroup.svelte";
     import PageBtn from "$lib/components/buttons/PageBtn.svelte";
+    import Checkbox from "$lib/components/inputs/Checkbox.svelte";
 </script>
 
 <svelte:head>
     <title>Прохождения теста Кто ты из слова пацана? | Psymetrica</title>
 </svelte:head>
 
-<main class="main">
+<main class="main mt-header">
     <Container>
         <div class="test">
             <div class="test__title">
@@ -77,10 +78,6 @@
 
 <style lang="scss">
     @import "../../../../lib/styles/index.scss";
-
-    .main {
-        padding-top: 160px;
-    }
 
     .test {
         max-width: 600px;
